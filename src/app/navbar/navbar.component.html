@@ -1,21 +1,18 @@
-<div class="fixed h-14 w-screen shadow-sm p-5">
-  <div class="top-0 left-0 h-screen w-16 fixed bg-zinc-900">
-    <div class="group">
-      <button class="sidebar-icon">
-        <span class="sidebar-tooltip group-hover:scale-100"
-          >View collected cats</span
-        >
-        <i-feather name="gitlab"></i-feather>
-      </button>
-    </div>
-      <div class="group">
-      <button class="sidebar-icon">
-        <span class="sidebar-tooltip group-hover:scale-100"
-          >Collect more cats</span
-        >
-        <i-feather name="sunset"></i-feather>
-      </button>
-      
-    </div>
+<div class="top-0 left-0 h-screen w-16 fixed bg-zinc-900">
+  <div class="group">
+    <a class="sidebar-icon" [routerLink]="['/collect-cats']" [routerLinkActive]="['active-icon']">
+      <span class="sidebar-tooltip group-hover:scale-100">
+        Collect more cats
+      </span>
+      <i-feather name="gitlab"></i-feather>
+    </a>
+  </div>
+  <div class="group">
+    <a class="sidebar-icon" [routerLink]="['/saved-cats']" [routerLinkActive]="['active-icon']">
+      <span class="sidebar-tooltip group-hover:scale-100">
+        View collected cats
+      </span>
+      <i-feather name="sunset"></i-feather>
+    </a>
   </div>
 </div>
