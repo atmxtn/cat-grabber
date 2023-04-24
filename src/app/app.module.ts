@@ -6,22 +6,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IconsModule } from 'src/app/lib/icon/icon.module';
-
-
+import { CatPostComponent } from './cat-post/cat-post.component';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { ImageService } from './image.service';
+import { UserSavedCatsComponent } from './user-saved-cats/user-saved-cats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    CatPostComponent,
+    UserDashboardComponent,
+    UserSavedCatsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    IconsModule
+    IconsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ImageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

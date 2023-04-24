@@ -1,23 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule} from '@angular/router';
-import { UserDashboardModule } from './user-dashboard/user-dashboard.module';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import { UserSavedCatsComponent } from './user-saved-cats/user-saved-cats.component';
 
 
 @NgModule({
   imports: [RouterModule.forRoot([
     {
-      path: 'dashboard',
+      path: 'collect-cats',
       component: UserDashboardComponent
     },
     {
+      path: 'saved-cats',
+      component: UserSavedCatsComponent
+    },
+    {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'collect-cats',
       pathMatch: 'full'
-      
     }
   ]),
-UserDashboardModule],
+],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
