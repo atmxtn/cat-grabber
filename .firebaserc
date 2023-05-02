@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cat-grabber": {
+      "hosting": {
+        "cat-grabber": [
+          "cat-grabber"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cat-grabber"
+  }
+}

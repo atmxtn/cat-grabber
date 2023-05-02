@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FeatherModule } from 'angular-feather';
-import { Gitlab } from 'angular-feather/icons';
+import { Gitlab, LogOut, Settings } from 'angular-feather/icons';
 import { Sunset } from 'angular-feather/icons';
 
 
@@ -9,7 +9,9 @@ import { Sunset } from 'angular-feather/icons';
   imports: [
     FeatherModule.pick({
       Gitlab,
-      Sunset
+      Sunset,
+      LogOut,
+      Settings
     }),
   ],
   exports: [FeatherModule],

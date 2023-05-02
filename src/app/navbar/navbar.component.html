@@ -1,6 +1,6 @@
-<div class="top-0 left-0 h-screen w-16 fixed bg-zinc-900">
+<div class="flex flex-auto flex-col top-0 left-0 h-screen w-16 fixed bg-zinc-900">
   <div class="group">
-    <a class="sidebar-icon" [routerLink]="['/collect-cats']" [routerLinkActive]="['active-icon']">
+    <a class="sidebar-icon" [routerLink]="['collect-cats']" [routerLinkActive]="['active-icon']">
       <span class="sidebar-tooltip group-hover:scale-100">
         Collect more cats
       </span>
@@ -8,11 +8,19 @@
     </a>
   </div>
   <div class="group">
-    <a class="sidebar-icon" [routerLink]="['/saved-cats']" [routerLinkActive]="['active-icon']">
+    <a class="sidebar-icon" [routerLink]="['saved-cats']" [routerLinkActive]="['active-icon']">
       <span class="sidebar-tooltip group-hover:scale-100">
         View collected cats
       </span>
       <i-feather name="sunset"></i-feather>
+    </a>
+  </div>
+  <div class="group">
+    <a class="sidebar-icon" [routerLink]="['settings']" [routerLinkActive]="['active-icon']">
+      <span class="sidebar-tooltip group-hover:scale-100">
+        Settings
+      </span>
+      <i-feather name="settings"></i-feather>
     </a>
   </div>
 </div>

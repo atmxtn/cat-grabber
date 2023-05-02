@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './user-dashboard.component.html',
 })
 export class UserDashboardComponent {
-  cat_url: any;
 
   constructor(private http: HttpClient) {}
 

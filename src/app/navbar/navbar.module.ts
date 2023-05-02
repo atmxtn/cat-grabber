@@ -7,7 +7,7 @@ import { IconsModule } from 'src/app/lib/icon/icon.module';
   declarations: [],
   imports: [
     CommonModule,
-    IconsModule
+    IconsModule,
   ]
 })
 export class NavbarModule { }
