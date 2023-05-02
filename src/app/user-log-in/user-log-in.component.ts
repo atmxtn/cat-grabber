@@ -1,8 +1,6 @@
-import { HttpErrorResponse, HttpStatusCode } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { catchError, tap } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -30,8 +28,8 @@ export class UserLogInComponent {
       password: string;
     };
 
-    //will return if sign in succeded and then will either throw error or will eepy into next page
     this.auth.signIn(credentials)
+  
   }
 
   ngOnInit() {
