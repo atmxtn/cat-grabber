@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-log-in',
   templateUrl: './user-log-in.component.html',
-  styleUrls: ['./user-log-in.component.css']
 })
 export class UserLogInComponent {
   formGroup = this.fb.group({
@@ -19,9 +17,8 @@ export class UserLogInComponent {
     this.resetForm();
     this.formGroup.markAllAsTouched();
 
-    if (this.formGroup.invalid) {
-      return;
-    }
+    if (this.formGroup.invalid) 
+      return
 
     const credentials = this.formGroup.value as {
       username: string;
@@ -42,7 +39,6 @@ export class UserLogInComponent {
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService,
-    private router: Router
+    private auth: AuthService
   ) {}
 }
