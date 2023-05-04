@@ -28,6 +28,19 @@ body { @apply bg-zinc-800 text-zinc-200; font-family: Roboto, "Helvetica Neue", 
     cursor-pointer shadow-lg ;
   }
 
+  .button {
+    @apply flex pt-2 pb-2 pl-1 pr-1
+  border-pink-600
+    border-solid border-2
+    border-spacing-3
+  dark:bg-zinc-800 text-white
+    hover:rounded-xl rounded-3xl
+    transition-all duration-[70ms] ease-linear
+    cursor-pointer;
+  }
+
+
+
   .active-icon{
     @apply bg-pink-600 text-white rounded-xl
   }
