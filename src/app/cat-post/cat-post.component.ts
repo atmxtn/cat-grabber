@@ -16,29 +16,29 @@ export class CatPostComponent {
   constructor(private imageService: ImageService) {}
 
   ngOnInit(){
-    this.getImageFromService()
+    
   }
 
-  createImageFromBlob(image: Blob) {
-   let reader = new FileReader();
-   reader.addEventListener("load", () => {
-      this.imageToShow = reader.result;
-   }, false);
+  // createImageFromBlob(image: Blob) {
+  //  let reader = new FileReader();
+  //  reader.addEventListener("load", () => {
+  //     this.imageToShow = reader.result;
+  //  }, false);
 
-   if (image) {
-      reader.readAsDataURL(image);
-   }
-  }
+  //  if (image) {
+  //     reader.readAsDataURL(image);
+  //  }
+  // }
 
-  getImageFromService() {
-      this.isImageLoading = true;
-      this.imageService.getImage(this.catUrl).subscribe(data => {
-        this.createImageFromBlob(data);
-        this.isImageLoading = false;
-      }, error => {
-        this.isImageLoading = false;
-        console.log(error);
-      });
-  }
+  // getImageFromService() {
+  //     this.isImageLoading = true;
+  //     this.imageService.getImage(this.catUrl).subscribe(data => {
+  //       this.createImageFromBlob(data);
+  //       this.isImageLoading = false;
+  //     }, error => {
+  //       this.isImageLoading = false;
+  //       console.log(error);
+  //     });
+  // }
 
 }
