@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CatImageService } from '../services/cat-image.service';
+
 
 @Component({
   selector: 'app-user-dashboard',
   templateUrl: './user-dashboard.component.html',
 })
 export class UserDashboardComponent {
+  catUrl = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(public catImageService: CatImageService){}
 
+  ngOnInit(){
+    this.catImageService.getCatURL().subscribe(url => this.catUrl = url)
+  }
+  
+  
 }
