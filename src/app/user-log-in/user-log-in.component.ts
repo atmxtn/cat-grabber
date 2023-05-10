@@ -21,7 +21,7 @@ export class UserLogInComponent {
       return
 
     const credentials = this.formGroup.value as {
-      username: string;
+      email: string;
       password: string;
     };
 

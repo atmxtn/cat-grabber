@@ -25,9 +25,9 @@ export class AuthService {
     });
   }
 
-  signIn(data: { username: string; password: string }) {
+  signIn(data: { email: string; password: string }) {
     this.afAuth
-      .signInWithEmailAndPassword(data.username, data.password)
+      .signInWithEmailAndPassword(data.email, data.password)
       .then((userCredential) => {
         const user = userCredential.user;
       })
@@ -42,7 +42,7 @@ export class AuthService {
 
   registerUser(data: { email: string; password: string }) {
     this.afAuth
-      .createUserWithEmailAndPassword(data.email, data.password)
+      .createUserWithEmailAndPassword(data.email, data.password).then(()=> {this.signIn(data)})
       .catch( (error) => {
         this.errorMessage = error.message;
       });
