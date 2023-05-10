@@ -1,5 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { ImageService } from '../services/image.service';
+import { Component } from '@angular/core';
+import { CatImageService } from '../services/cat-image.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore'
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-cat-post',
@@ -7,38 +9,25 @@ import { ImageService } from '../services/image.service';
   styleUrls: ['./cat-post.component.css']
 })
 export class CatPostComponent {
+  catUrl = '';
 
-  @Input() catUrl = '';
+  constructor(public catImageService: CatImageService, private db: AngularFirestore, private auth: AuthService){}
 
-  imageToShow: any;
-  isImageLoading?: boolean;
-
-  constructor(private imageService: ImageService) {}
-
-  ngOnInit(){
-    
+  getNewCat(){
+    this.catImageService.getCatURL().subscribe(url => this.catUrl = url)
   }
 
-  // createImageFromBlob(image: Blob) {
-  //  let reader = new FileReader();
-  //  reader.addEventListener("load", () => {
-  //     this.imageToShow = reader.result;
-  //  }, false);
+  ngOnInit(){
+    this.getNewCat()
+  }
 
-  //  if (image) {
-  //     reader.readAsDataURL(image);
-  //  }
-  // }
-
-  // getImageFromService() {
-  //     this.isImageLoading = true;
-  //     this.imageService.getImage(this.catUrl).subscribe(data => {
-  //       this.createImageFromBlob(data);
-  //       this.isImageLoading = false;
-  //     }, error => {
-  //       this.isImageLoading = false;
-  //       console.log(error);
-  //     });
-  // }
+  saveCat(){ 
+    this.db.collection('cat-posts').add({url: this.catUrl, uid: this.auth.uid})
+    this.getNewCat()
+  }
+  
+  dismissCat(){
+    this.getNewCat()
+  }
 
 }
