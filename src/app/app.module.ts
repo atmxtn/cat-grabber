@@ -35,7 +35,7 @@ import { IconsModule } from 'src/app/lib/icon/icon.module';
       provideAuth(() => getAuth()
   ),
   ],
-  providers: [ImageService, { provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
