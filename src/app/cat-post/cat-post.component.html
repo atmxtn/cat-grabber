@@ -1,5 +1,13 @@
-<div class="flex max-w-lg flex-col max-h bg-zinc-900 rounded-md transition-all duration-500">
-  <img class="object-contain flex p-4 items-center h-auto rounded-sm transition-all duration-500" [src]="catUrl" />
-  <div class="flex w-auto h-20 bg-zinc-900 rounded-b-md transition-all duration-500"></div>
+<div class="flex max-w-lg flex-col max-h bg-zinc-900 rounded-md transition-all ">
+  <div class="rounded-sm"></div><img class="object-contain flex p-4 items-center h-auto  transition-all " [src]="catUrl" />
+  <div class="flex place-content-evenly w-auto h-20 bg-zinc-900 rounded-b-md transition-all">
+    <div class="button-cat-post" (click)="dismissCat()" >
+      <i-feather name="x" class="!w-9 !h-9"></i-feather>
+    </div>
+    <div class="w-5"></div>
+    <div class="button-cat-post" (click)="saveCat()">
+      <i-feather name="check" class="!w-9 !h-9"></i-feather>
+    </div>
+  </div>
 </div>
 

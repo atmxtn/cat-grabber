@@ -8,12 +8,14 @@ import { Router } from '@angular/router';
 export class AuthService {
   loggedIn = false;
   errorMessage = '';
+  uid: any;
 
   constructor(public afAuth: AngularFireAuth, private router: Router) {
     const user$ = this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.router.navigate(['collect-cats']);
         this.loggedIn = true;
+        this.uid = user.uid
         return user;
       } else {
         this.router.navigate(['login']);
