@@ -14,6 +14,7 @@ import { CatPostComponent } from './cat-post/cat-post.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { IconsModule } from 'src/app/lib/icon/icon.module';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { IconsModule } from 'src/app/lib/icon/icon.module';
     UserDashboardComponent,
     UserSavedCatsComponent,
     UserSettingsComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 {
   "hosting": {
     "target": "cat-grabber",
-    "public": "dist/cat-grabber",
+    "public": "dist",
     "ignore": [
       "**/.*"
     ],

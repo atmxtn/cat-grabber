@@ -14,6 +14,7 @@ export class CatPostComponent {
   constructor(public catImageService: CatImageService, private db: AngularFirestore, private auth: AuthService){}
 
   getNewCat(){
+    this.catUrl = ''
     this.catImageService.getCatURL().subscribe(url => this.catUrl = url)
   }
 
