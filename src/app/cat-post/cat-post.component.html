@@ -1,7 +1,7 @@
-<div class="flex max-w-xl flex-col max-h bg-zinc-900 rounded-md transition-all ">
-  <img *ngIf="catUrl != ''" class="object-contain flex p-4 items-center h-auto !rounded-md max-h-fit transition-all " [src]="catUrl" />
+<div class="flex max-w-xl max-h-[calc(100vh-48px)] justify-start items-stretch flex-col bg-zinc-900 rounded-md transition-all ">
+  <img *ngIf="catUrl != ''" class="object-contain flex p-4 items-center h-full flex-shrink !rounded-md max-h-fit transition-all " [src]="catUrl" />
   <div *ngIf="catUrl == ''"> <div class="!w-72 !h-auto"><app-loading-spinner></app-loading-spinner></div> </div>
-  <div class="flex place-content-evenly w-auto h-20 bg-zinc-900 rounded-b-md transition-all">
+  <div class="flex place-content-evenly flex-grow-0 flex-shrink-0 w-auto h-20 bg-zinc-900 rounded-b-md transition-all">
     <div class="button-cat-post" (click)="dismissCat()" >
       <i-feather name="x" class="!w-9 !h-9"></i-feather>
     </div>

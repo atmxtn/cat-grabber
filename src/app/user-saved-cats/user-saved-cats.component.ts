@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { BehaviorSubject, Observable, Subject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-user-saved-cats',
@@ -8,15 +9,21 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 export class UserSavedCatsComponent {
 
   constructor(private db: AngularFirestore){}
+
   pagesize = 5
-  catPosts = this.db.collection('cat-posts', ref => ref.orderBy('url').limit(this.pagesize)).get().subscribe(data => console.log(data.docs))
+  currentPage$ = new BehaviorSubject(1)
+  catPosts = this.currentPage$.pipe(
+    switchMap(currentPage => {
+      return this.db.collection('cat-posts', ref => ref.orderBy('url').limit(this.pagesize)).valueChanges()
+    })
+  ) 
 
-  
   nextPage(){
-
+    this.currentPage$.next(this.currentPage$.value + 1)
   }
 
   previousPage(){
+    this.currentPage$.next(this.currentPage$.value - 1)
   }
 
 }
