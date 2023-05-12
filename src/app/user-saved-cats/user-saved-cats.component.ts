@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { BehaviorSubject, Observable, Subject, switchMap } from 'rxjs';
+import { BehaviorSubject, switchMap } from 'rxjs';
 
 @Component({
   selector: 'app-user-saved-cats',
